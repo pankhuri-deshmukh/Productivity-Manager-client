@@ -1,10 +1,12 @@
 import logo from './logo.svg';
 import './App.css';
+import Navbar from './Pages/Navbar.';
 
 function App() {
   return (
     <div>
-      <h1>Welcome to my app</h1>
+      <Navbar />
+      <h1>love you pankhuri deshmukh gupta</h1>
     </div>
   )
 }
