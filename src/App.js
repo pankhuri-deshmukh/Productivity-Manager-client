@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
-import Navbar from './Pages/Navbar.';
+import Navbar from './components/Navbar';
 
 function App() {
   return (
     <div>
       <Navbar />
-      <h1>love you pankhuri deshmukh gupta</h1>
+      {/* <h1>love you pankhuri deshmukh gupta</h1> */}
     </div>
   )
 }
