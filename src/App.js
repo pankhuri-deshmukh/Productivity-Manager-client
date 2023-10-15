@@ -1,3 +1,4 @@
+// to run the docker file run - "docker run -p 3000:3000 productivity-manager-client"
 import Navbar from './components/Navbar';
 import Counter from './components/Counter';
 
