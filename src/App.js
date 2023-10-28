@@ -5,6 +5,8 @@ import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Register from './Pages/Register';
 
+// to run the docker file run - "docker run -p 3000:3000 productivity-manager-client"
+
 function App() {
   return (
     <div>
