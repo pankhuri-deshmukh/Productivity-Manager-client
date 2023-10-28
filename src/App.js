@@ -1,12 +1,21 @@
+import {Route, Routes} from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Counter from './components/Counter';
+import Footer from './components/Footer';
+import Home from './Pages/Home';
+import Login from './Pages/Login';
+import Register from './Pages/Register';
 
 function App() {
   return (
     <div>
-      <Navbar />
       {/* <h1>love you pankhuri deshmukh gupta</h1> */}
-      <Counter />
+      <Navbar />
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/auth/register' element={<Register />} />
+        <Route path='/auth/login' element={<Login />} />
+      </Routes>
+      <Footer />
     </div>
   )
 }

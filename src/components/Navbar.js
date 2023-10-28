@@ -1,36 +1,29 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaShoppingCart, FaUser } from 'react-icons/fa';
+import { FaUser } from 'react-icons/fa';
 import { RiHome2Line } from 'react-icons/ri';
 import { AiOutlineClose } from 'react-icons/ai';
-import Counter from './Counter';
+import { ContextUser } from '../context/UserContext';
+import UserSide from './UserSide';
 
 function Navbar() {
   const [viewUser, setViewUser] = useState(false);
 
-  const handleClick = () => {
-    // Handle click for shopping cart
-  };
-
   const handleClickUser = () => {
-    // Handle click for user
+    setViewUser(!viewUser);
   };
 
   return (
     <div className='h-16 w-full bg-black'>
       <div className="fixed h-16 w-full bg-black p-4 flex justify-between items-center ">
         <Link to="/" className="text-white text-2xl font-bold">
-          Hitansh cURRANCY
+          Hitansh currancy
         </Link>
 
         <div className="flex items-center space-x-4">
           <Link to="/" className="text-white">
             <RiHome2Line size={20} />
           </Link>
-
-          <div onClick={handleClick} className="text-white cursor-pointer">
-            <FaShoppingCart size={20} />
-          </div>
 
           <div onClick={handleClickUser} className="text-white cursor-pointer">
             <FaUser size={20} />
@@ -42,7 +35,9 @@ function Navbar() {
         <div onClick={() => setViewUser(false)} className="flex">
           <AiOutlineClose size={25} className="mr-2 text-black font-bold" />
         </div>
-        <Counter />
+        <ContextUser.Provider value={{ viewUser, setViewUser }}>
+        <UserSide />
+        </ContextUser.Provider>
       </div>
     </div>
   );
